@@ -3,5 +3,9 @@
 <div class="heroes-menu">fghj 
   <a *ngFor="let hero of heroes"  routerLink="/detail/{{hero.id}}">{{hero.name}} </a>
 </div>
+<!-- <img src="/assets/alms.jpg" /> -->
+<!-- <img [src]="imgsrc" /> -->
+<!-- <input [value]="email" (keyup.enter)="email = 'bbcc'" /> -->
+{{price |currency:"AUD": true:3.2-2 }}
+<app-hero-search (change)="mychange($event)" ></app-hero-search>
 
-<app-hero-search></app-hero-search>

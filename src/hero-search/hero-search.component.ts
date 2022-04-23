@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, HostListener } from '@angular/core';
 
 import { Observable, Subject } from 'rxjs';
 
@@ -12,13 +12,24 @@ import { HeroService } from '../hero.service';
 @Component({
   selector: 'app-hero-search',
   templateUrl: './hero-search.component.html',
-  styleUrls: [ './hero-search.component.css' ]
+  // styleUrls: [ './hero-search.component.css' ]
 })
 export class HeroSearchComponent implements OnInit {
   heroes$!: Observable<Hero[]>;
   private searchTerms = new Subject<string>();
 
+  varner = "bat"
+
+
+  @Output() change= new EventEmitter()
+
   constructor(private heroService: HeroService) {}
+
+  @HostListener("click") onClick(){
+    console.log('onClick')
+    // this.change.emit({"aabb": this.varner});
+    this.change.emit(this.varner);
+  }
 
   // Push a search term into the observable stream.
   search(term: string): void {
