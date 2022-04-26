@@ -4,6 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { HeroesComponent } from '../heroes/heroes.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { HerodetailComponent } from '../herodetail/herodetail.component';
+import { DemoComp } from '../demo/demo.component';
+import { TemplateDrivenForm } from '../form/aa.component';
+import { ReactiveForm } from '../form/bb.component';
 
 
 const routes: Routes = [
@@ -11,6 +14,8 @@ const routes: Routes = [
     { path: 'heroes', component: HeroesComponent},
     { path: 'dashboard', component: DashboardComponent },
     { path: 'detail/:id', component: HerodetailComponent },
+    { path: 'form', component: ReactiveForm },
+    { path: '**', component: DemoComp },
 
 ];
 @NgModule({
